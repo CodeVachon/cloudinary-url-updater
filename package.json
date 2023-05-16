@@ -1,0 +1,25 @@
+{
+  "name": "@codevachon/cloudinary-url-updater",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.1.6",
+    "cloudinary": "^1.37.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "knex": "^2.4.2",
+    "mysql2": "^3.3.1",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}

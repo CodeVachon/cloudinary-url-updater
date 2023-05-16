@@ -1,0 +1,9 @@
+{
+  "eslint.packageManager": "pnpm",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "cSpell.words": ["cloudinary"]
+}
