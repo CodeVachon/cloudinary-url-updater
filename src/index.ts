@@ -39,20 +39,29 @@ async function init() {
     /**
      * For Each Record in the Record Set
      */
-    for (const record of recordSet) {
+    const max = recordSet.length;
+    for (let i = 0; i < max; i++) {
+        const record = recordSet[i];
+        console.log(`Processing Record ${i + 1} of ${max} - ${record.uri}`);
+
         /**
          * Get the extension from the URI
          */
         const ext = record.uri.trim().split(".").pop();
+
         /**
-         * Get the source image URL from Cloudinary using the public ID from the record
+         * Manually upload the image to Cloudinary from Old Location
          */
-        const sourceImage = await cloudinary.url(record.publicId, { secure: true });
+        const uploaded = await cloudinary.uploader.upload(record.uri, {
+            public_id: String(record.publicId),
+            overwrite: true,
+            resource_type: ext === "mp4" ? "video" : "image"
+        });
 
         /**
          * Generate the new URI from the source image URL and the extension
          */
-        const newURI = sourceImage.trim() + "." + ext;
+        const newURI = uploaded.secure_url;
 
         /**
          * Update the record in the database
